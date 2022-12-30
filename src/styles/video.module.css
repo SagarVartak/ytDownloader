@@ -1,8 +1,37 @@
-ul li{
-    display: inline;
+ul{
     list-style: none;
-    width: auto;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 2px solid pink;
+    display: inline-table;
+   
+    
 }
 li{
-    padding: 50px;
+    float: left;    
 }
+li a{
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+li button:hover {
+    background-color: #00B4CC;
+  }
+
+button{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+  .thumb{
+    padding: 50px;
+  }
