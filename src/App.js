@@ -16,7 +16,7 @@ function App() {
 
   const handleClick = async (e) => {
     e.preventDefault();
-    await fetch(process.env.REACT_APP_URL + url)
+    await fetch("https://flask-hello-world-a9eww2rl4-sagarvartak.vercel.app/api/youtube?url=" + url)
       .then((res) => res.json())
       .then((data) => {
         setVid(data);
