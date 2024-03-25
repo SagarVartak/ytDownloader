@@ -1,27 +1,40 @@
 import React from "react";
 import styles from "../styles/video.module.css"
+
+
 export default function youtube(video) {
+
+  const handleClick = (url,fileName) =>{
+    const aTag = document.createElement("a");
+    aTag.href =url;
+    aTag.setAttribute("download",fileName);
+    document.body.appendChild(aTag);
+    aTag.click();
+    aTag.remove();
+  }
+
   console.log("props", video);
   return (
     <>
       {/* <div>youtube</div> */}
       <div className={styles.thumb}>
-        <img src={video.video.info.thumbnail} alt='thumbnail' height='100px'/>
+        <img src={video.video.info.thumbnail} alt='thumbnail'/>
         <p>{video.video.info.title}</p>
       </div>
-      <div>
+      <div className={styles.mainDiv}>
         {video.video.sources.map((source,index) => {
             return(
           <ul key={index}>
+            <li><img src={video.video.info.thumbnail} alt='thumbnail' height='100px'/></li>
             <li>Quality: {source.resolution}</li>
             <li>Size: {source.size}</li>
-            <li>
+            <li>Video Type: {source.type}</li>
+            <li className={styles.liButton}>
               <a
                 href={source.url}
                 download={video.video.info.title}
-                
               >
-                <button className="btn">Download</button>
+                <button className="btn" >Download</button>
               </a>
             </li>
           </ul>

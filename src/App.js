@@ -16,13 +16,14 @@ function App() {
 
   const handleClick = async (e) => {
     e.preventDefault();
-    await fetch("https://flask-hello-world-a9eww2rl4-sagarvartak.vercel.app/api/youtube?url=" + url)
+    await fetch("https://flask-hello-world-three.vercel.app/api/youtube?url=" + url)
       .then((res) => res.json())
       .then((data) => {
         setVid(data);
       });
+    console.log(setVid);
   };
-
+  //https://flask-hello-world-a9eww2rl4-sagarvartak.vercel.app/api/youtube?url=
   const handleClear = (e) => {
     e.preventDefault();
     setUrl("");
